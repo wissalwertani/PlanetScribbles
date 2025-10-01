@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Book an Event</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="booking.html">Event Booking</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="booking-form">
+      <label>Name: <input type="text" required></label>
+      <label>Email: <input type="email" required></label>
+      <label>Event:
+        <select required>
+          <option value="Workshop">Workshop</option>
+          <option value="Training">Training</option>
+          <option value="Meetup">Meetup</option>
+        </select>
+      </label>
+      <label>Date: <input type="date" required></label>
+      <button type="submit">Book Now</button>
+    </form>
+    <p id="confirmation"></p>
+  </main>
+
+  <script>
+    document.getElementById("booking-form").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("confirmation").innerText = "✅ Booking confirmed! We will contact you soon.";
+    });
+  </script>
+</body>
+</html>
